@@ -2,8 +2,10 @@
 
 # 🐀 RAT VISION
 
-> 👁️ **See what the rat sees.**
+> 👁️ **See what the rat sees.**<br>
 > 🎮 Automatic per-game **display color profiles for Windows** — gamma, brightness, contrast and NVIDIA Digital Vibrance.
+
+RAT VISION automatically applies the display colors you want when a configured game or application becomes active, then restores your desktop profile after Alt-Tab or exit.
 
 > 🧪 **Public beta — Windows/NVIDIA hardware feedback welcome.**
 
@@ -12,48 +14,28 @@
 [![License LGPL-2.1](https://img.shields.io/badge/license-LGPL--2.1-blue)](LICENSE)
 [![Windows CI](https://github.com/atikhobaev/rat-vision/actions/workflows/ci.yml/badge.svg)](https://github.com/atikhobaev/rat-vision/actions/workflows/ci.yml)
 
-[![Support the lab — Buy me a coffee](docs/images/support-the-lab-banner.png)](https://dalink.to/bazaz)
-
-<p align="center"><strong>☕ CLICK THE PANEL TO SUPPORT RAT VISION DEVELOPMENT</strong></p>
-
-## 🛡️ NOT A CHEAT
-
-> **XRAT LABS // SECURITY CLASSIFICATION: DISPLAY UTILITY**<br>
-> `PROCESS OBSERVATION` · `DISPLAY OUTPUT CONTROL` · `NO GAME INJECTION`
-
-**RAT VISION changes what your monitor displays — not what the game renders.**
-
-RAT VISION is a display-output utility. It detects which configured application is in the foreground and applies your chosen monitor color profile. It **does not inject code**, does not read or write **game memory**, does not modify game files, does not automate mouse/keyboard input, and does not interact with anti-cheat systems.
-
-| ✅ RAT VISION does | ❌ RAT VISION does not |
-|---|---|
-| 🖥️ Change Windows gamma ramp | Inject DLLs/code |
-| 🎨 Change NVIDIA Digital Vibrance | Read/write game memory |
-| 👁️ Observe the foreground executable name | Modify game files |
-| 🎮 Select a profile for that app | Automate input |
-| 🌗 Restore desktop colors after Alt-Tab | Interact with anti-cheat |
-
-## 🎯 What it is for
-
-The main use case is simple: **dark shooters often need a different gamma/color setup than the desktop**. RAT VISION automatically enables a brighter or differently corrected profile when the game becomes active, then restores your Global/desktop profile when you Alt-Tab or exit.
-
-It also works as general per-application color correction for games, creative tools, video players and other Windows apps.
-
 ## 🚀 Download
 
 > **XRAT DISTRIBUTION NODE // PUBLIC BETA**<br>
 > `WINDOWS 10/11` · `VERSION 1.2.0-beta.1` · `SHA-256 VERIFIED`
 
 ### 🪟 Windows Installer — recommended
-**[⬇️ DOWNLOAD WINDOWS INSTALLER](https://github.com/atikhobaev/rat-vision/releases/download/v1.2.0-beta.1/RAT-VISION-Setup-v1.2.0-beta.1.exe)**
-Creates Start Menu/uninstall entries and gives the updater a stable install path.
+
+## **[⬇️ DOWNLOAD WINDOWS INSTALLER](https://github.com/atikhobaev/rat-vision/releases/download/v1.2.0-beta.1/RAT-VISION-Setup-v1.2.0-beta.1.exe)**
+
+Creates Start Menu and uninstall entries and gives the updater a stable installation path.
 
 ### 📦 Portable
-**[⬇️ DOWNLOAD PORTABLE ZIP](https://github.com/atikhobaev/rat-vision/releases/download/v1.2.0-beta.1/RAT-VISION-Portable-v1.2.0-beta.1.zip)**
+
+## **[⬇️ DOWNLOAD PORTABLE ZIP](https://github.com/atikhobaev/rat-vision/releases/download/v1.2.0-beta.1/RAT-VISION-Portable-v1.2.0-beta.1.zip)**
+
 Unzip anywhere and run `RAT VISION.exe` — no installation required.
 
-> 🛡️ **Release checks:** SHA-256 published • VirusTotal links added after scanning the exact uploaded files • Windows CI required.
+> 🛡️ **Display utility only — no injection, no memory access, no game modification.**
 
+## 🖥️ RAT VISION in action
+
+![RAT VISION Level Black](docs/images/level-black.png)
 
 ## ✨ Features
 
@@ -71,21 +53,38 @@ Unzip anywhere and run `RAT VISION.exe` — no installation required.
 - ❔ Guided tutorial tour + contextual tooltips
 - 🐀 Tray mode with fast global XRAT toggle
 - 🔄 GitHub release updater
-- 📊 Pseudonymous usage analytics — **enabled by default in configured builds, easy to turn off**
+- 📊 Pseudonymous usage analytics — **enabled by default in configured builds and easy to turn off**
 
-## 📸 Screenshots
+## 🎯 Typical usage
 
-> **OBSERVATION ARCHIVE // INTERFACE CAPTURES**<br>
-> `LEVEL BLACK` · `CLEAN LAB` · `GUIDED PROTOCOL`
+Dark shooters often need a different gamma or color setup than the desktop. RAT VISION enables a brighter or differently corrected profile when the game becomes active, then restores your Global/desktop profile when you Alt-Tab or exit.
 
-### 🌙 Level Black
-![RAT VISION Level Black](docs/images/level-black.png)
+It also works as general per-application color correction for games, creative tools, video players and other Windows apps.
 
-### ☀️ Clean Lab
-![RAT VISION Clean Lab](docs/images/clean-lab.png)
+## 🧪 How it works
 
-### ❔ Guided tour
-![RAT VISION tutorial tour](docs/images/tutorial-tour.png)
+1. 👁️ Observe foreground-window changes through Win32.
+2. 🎯 Match the executable name to an enabled profile.
+3. 🖥️ Apply Windows gamma ramp to selected displays.
+4. 🎨 Apply NVIDIA Digital Vibrance through NVAPI when available.
+5. 🌐 Return to Global or normal colors when the application loses focus.
+
+## 🛡️ NOT A CHEAT
+
+> **XRAT LABS // SECURITY CLASSIFICATION: DISPLAY UTILITY**<br>
+> `PROCESS OBSERVATION` · `DISPLAY OUTPUT CONTROL` · `NO GAME INJECTION`
+
+**RAT VISION changes what your monitor displays — not what the game renders.**
+
+RAT VISION is a display-output utility. It detects which configured application is in the foreground and applies your chosen monitor color profile. It **does not inject code**, does not read or write **game memory**, does not modify game files, does not automate mouse/keyboard input, and does not interact with anti-cheat systems.
+
+| ✅ RAT VISION does | ❌ RAT VISION does not |
+|---|---|
+| 🖥️ Change Windows gamma ramp | Inject DLLs/code |
+| 🎨 Change NVIDIA Digital Vibrance | Read/write game memory |
+| 👁️ Observe the foreground executable name | Modify game files |
+| 🎮 Select a profile for that app | Automate input |
+| 🌗 Restore desktop colors after Alt-Tab | Interact with anti-cheat |
 
 ## 📦 Installer vs Portable
 
@@ -114,38 +113,60 @@ Profiles can target one or more monitors independently. RAT VISION prefers Windo
 
 RAT VISION checks public GitHub Releases. Updates are never installed silently: the app discovers a newer eligible release, downloads the matching Installer/Portable asset, verifies SHA-256, then asks you to apply it.
 
-See `docs/UPDATE_PROTOCOL.md`.
+See [`docs/UPDATE_PROTOCOL.md`](docs/UPDATE_PROTOCOL.md).
 
-## 🧪 How it works
-
-1. 👁️ Observe foreground-window changes through Win32.
-2. 🎯 Match the executable name to an enabled profile.
-3. 🖥️ Apply Windows gamma ramp to selected displays.
-4. 🎨 Apply NVIDIA Digital Vibrance through NVAPI when available.
-5. 🌐 Return to Global or normal colors when the game loses focus.
-
-No game process injection is involved.
-
-## 🛡️ Security & VirusTotal
-
-Every public release publishes `SHA256SUMS.txt`. Before release publication, the final Installer EXE, Portable `RAT VISION.exe`, and Portable ZIP should be scanned with VirusTotal. **Never copy VirusTotal links from an older build.** Real URLs are inserted only after scanning the exact uploaded artifacts.
-
-## ⚙️ Installation
-
-### Installer
-Run `RAT-VISION-Setup-vX.Y.Z.exe`. The default per-user location is `%LOCALAPPDATA%\Programs\RAT VISION`.
-
-### Portable
-Extract `RAT-VISION-Portable-vX.Y.Z.zip` and run `RAT VISION.exe`.
-
-## 📊 Anonymous analytics
+## 📊 Pseudonymous usage analytics
 
 > **TELEMETRY PROTOCOL // USER CONTROLLED**<br>
 > `PSEUDONYMOUS` · `MINIMAL EVENTS` · `SETTINGS OPT-OUT`
 
-When a build is configured with a TelemetryDeck public App ID and organization namespace, RAT VISION shares minimal pseudonymous usage statistics by default to help measure retention and version adoption. **You can turn it off at any time in Settings.** Unconfigured builds send no analytics. The random installation UUID is SHA-256 hashed locally before transmission. No executable names, game/profile names, file paths, usernames, serial numbers or foreground history are collected. See `docs/ANALYTICS.md`.
+📊 Pseudonymous usage analytics are **enabled by default in configured builds** and can be disabled at any time in Settings. RAT VISION uses TelemetryDeck to measure retention and version adoption. Unconfigured builds send no analytics.
+
+The random installation UUID is SHA-256 hashed locally before transmission. No executable names, game/profile names, file paths, usernames, serial numbers or foreground history are collected. See [`docs/ANALYTICS.md`](docs/ANALYTICS.md).
 
 GitHub itself provides Release Asset download counts plus recent repository traffic/referrers.
+
+## 🛡️ Security & VirusTotal
+
+Every public release publishes [`SHA256SUMS.txt`](https://github.com/atikhobaev/rat-vision/releases/download/v1.2.0-beta.1/SHA256SUMS.txt). The Installer EXE, Portable `RAT VISION.exe` and Portable ZIP must each be scanned separately with VirusTotal. **Never copy VirusTotal links from another build.** Real URLs will be added only after scanning the exact published artifacts.
+
+See [`SECURITY.md`](SECURITY.md) for responsible disclosure guidance.
+
+## 📸 More interface views
+
+> **OBSERVATION ARCHIVE // INTERFACE CAPTURES**<br>
+> `CLEAN LAB` · `GUIDED PROTOCOL`
+
+### ☀️ Clean Lab
+
+![RAT VISION Clean Lab](docs/images/clean-lab.png)
+
+### ❔ Guided tour
+
+![RAT VISION tutorial tour](docs/images/tutorial-tour.png)
+
+## ⚙️ Installation
+
+### Installer
+
+Run `RAT-VISION-Setup-vX.Y.Z.exe`. The default per-user location is `%LOCALAPPDATA%\Programs\RAT VISION`.
+
+### Portable
+
+Extract `RAT-VISION-Portable-vX.Y.Z.zip` and run `RAT VISION.exe`.
+
+## 🧰 Beta verification checklist
+
+For hardware feedback, verify these concrete scenarios: **Global OFF restore**, **Alt-Tab restore/reapply**, **two-monitor independent restore**, **NVIDIA saturation**, **tray OFF/ON lamp**, and **exit restore**. Include diagnostics plus Windows/GPU/monitor details in bug reports.
+
+### ⚡ Everyday UX details
+
+- **Quick ON/OFF** toggles are available directly beside each profile.
+- Contextual **tooltips** explain controls and the Global profile behavior.
+- The built-in **Tutorial Tour** provides guided onboarding with draggable help cards.
+- 📌 **Always on top** is available in the header beside Day/Night.
+- Display rows show the **system-reported monitor name** plus technical `DISPLAYx` identity when available.
+- The remaining **working Settings toggles** are Launch with Windows, **Start minimized to tray**, and **Closing the window minimizes to tray**.
 
 ## 🧑‍💻 Build from source
 
@@ -163,36 +184,6 @@ For a complete release build with Inno Setup installed:
 .\release\build-release.ps1 -Version 1.2.0-beta.1
 ```
 
-## 🗺️ Roadmap
-
-- 🧪 broaden Windows/NVIDIA hardware testing during public beta
-- 🖥️ improve display/GPU compatibility diagnostics
-- 🔄 harden self-update based on real published releases
-- 📊 evaluate anonymous retention metrics while keeping telemetry transparent and easy to disable
-
-## 📜 Licenses
-
-See [`LICENSES.md`](LICENSES.md) for third-party and reused-code license notices.
-
-## ☕ Support
-
-[![Support the lab — Buy me a coffee](docs/images/support-the-lab-banner.png)](https://dalink.to/bazaz)
-
-If RAT VISION saves you time tweaking gamma every time you launch a shooter, click the panel above or use the in-app **☕ Buy me a coffee** button. Your support keeps XRAT development, hardware testing and public releases moving.
-
-## 🧰 Beta verification checklist
-
-For hardware feedback, verify these concrete scenarios: **Global OFF restore**, **Alt-Tab restore/reapply**, **two-monitor independent restore**, **NVIDIA saturation**, **tray OFF/ON lamp**, and **exit restore**. Include diagnostics plus Windows/GPU/monitor details in bug reports.
-
-### ⚡ Everyday UX details
-
-- **Quick ON/OFF** toggles are available directly beside each profile.
-- Contextual **tooltips** explain controls and the Global profile behavior.
-- The built-in **Tutorial Tour** provides guided onboarding with draggable help cards.
-- 📌 **Always on top** is available in the header beside Day/Night.
-- Display rows show the **system-reported monitor name** plus technical `DISPLAYx` identity when available.
-- The remaining **working Settings toggles** are Launch with Windows, **Start minimized to tray**, and **Closing the window minimizes to tray**.
-
 ### 🧪 Simulation / development workflow
 
 `RAT VISION v1.2.0-beta.1` can be launched without touching real display hardware:
@@ -201,7 +192,7 @@ For hardware feedback, verify these concrete scenarios: **Global OFF restore**, 
 python -m ratvision --simulate
 ```
 
-The Windows one-click build is self-contained: **system Python is not required**. `scripts\\build-windows.bat` installs a private CPython 3.13 x64 runtime with Tcl/Tk into the project build directory.
+The Windows one-click build is self-contained: **system Python is not required**. `scripts\build-windows.bat` installs a private CPython 3.13 x64 runtime with Tcl/Tk into the project build directory.
 
 ### 🎯 Built-in starter profiles
 
@@ -210,3 +201,20 @@ The first run includes starter profiles for **Escape from Tarkov**, **Escape fro
 The one-click Windows builder **downloads the official CPython 3.13.15 x64 installer** from python.org, verifies its SHA-256, and installs it privately for the build.
 
 The private runtime is installed with **Tcl/Tk enabled** so the Tkinter UI builds and runs consistently.
+
+## 🗺️ Roadmap
+
+- 🧪 Broaden Windows/NVIDIA hardware testing during public beta
+- 🖥️ Improve display/GPU compatibility diagnostics
+- 🔄 Harden self-update based on real published releases
+- 📊 Improve pseudonymous retention metrics while keeping telemetry transparent and easy to disable
+
+## ☕ Support
+
+[![Support the lab — Buy me a coffee](docs/images/support-the-lab-banner.png)](https://dalink.to/bazaz)
+
+If RAT VISION saves you time tweaking gamma every time you launch a shooter, click the panel above or use the in-app **☕ Buy me a coffee** button. Your support keeps XRAT development, hardware testing and public releases moving.
+
+## 📜 Licenses
+
+See [`LICENSES.md`](LICENSES.md) for third-party and reused-code license notices.

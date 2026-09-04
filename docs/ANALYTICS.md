@@ -1,6 +1,6 @@
 # 📊 Pseudonymous Usage Analytics
 
-RAT VISION pseudonymous usage analytics are **ON by default** in builds configured with a TelemetryDeck public App ID and organization namespace. You can **opt out at any time** in **Settings → Share anonymous usage statistics**. RAT VISION does not operate its own analytics server.
+RAT VISION pseudonymous usage analytics are **ON by default** in builds configured with a TelemetryDeck public App ID and organization namespace. You can **opt out at any time** in Settings. RAT VISION does not operate its own analytics server.
 
 If a build has no analytics configuration, no analytics requests are sent and the setting is hidden.
 
@@ -14,7 +14,7 @@ If a build has no analytics configuration, no analytics requests are sent and th
 - monitor count;
 - `app_started` and at most one `daily_active` event per rolling 24 hours.
 
-The anonymous installation UUID is not derived from hardware, Windows account, IP address or any device serial number. RAT VISION SHA-256 hashes it locally before transmission, and TelemetryDeck hashes the identifier again server-side. Turning analytics off retains the local UUID so that re-enabling does not create a fake new installation in retention statistics.
+The pseudonymous installation UUID is not derived from hardware, Windows account, IP address or any device serial number. RAT VISION SHA-256 hashes it locally before transmission, and TelemetryDeck hashes the identifier again server-side. Turning analytics off retains the local UUID so that re-enabling does not create a fake new installation in retention statistics.
 
 ## ❌ Never collected
 
