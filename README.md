@@ -1,3 +1,5 @@
+![RAT VISION — XRAT Visual Systems, Level Black](docs/images/rat-vision-level-black-banner.png)
+
 # 🐀 RAT VISION
 
 > 👁️ **See what the rat sees.**
@@ -10,8 +12,14 @@
 [![License LGPL-2.1](https://img.shields.io/badge/license-LGPL--2.1-blue)](LICENSE)
 [![Windows CI](https://github.com/atikhobaev/rat-vision/actions/workflows/ci.yml/badge.svg)](https://github.com/atikhobaev/rat-vision/actions/workflows/ci.yml)
 
+[![Support the lab — Buy me a coffee](docs/images/support-the-lab-banner.png)](https://dalink.to/bazaz)
+
+<p align="center"><strong>☕ CLICK THE PANEL TO SUPPORT RAT VISION DEVELOPMENT</strong></p>
 
 ## 🛡️ NOT A CHEAT
+
+> **XRAT LABS // SECURITY CLASSIFICATION: DISPLAY UTILITY**<br>
+> `PROCESS OBSERVATION` · `DISPLAY OUTPUT CONTROL` · `NO GAME INJECTION`
 
 **RAT VISION changes what your monitor displays — not what the game renders.**
 
@@ -33,6 +41,9 @@ It also works as general per-application color correction for games, creative to
 
 ## 🚀 Download
 
+> **XRAT DISTRIBUTION NODE // PUBLIC BETA**<br>
+> `WINDOWS 10/11` · `VERSION 1.2.0-beta.1` · `SHA-256 VERIFIED`
+
 ### 🪟 Windows Installer — recommended
 **[⬇️ DOWNLOAD WINDOWS INSTALLER](https://github.com/atikhobaev/rat-vision/releases/download/v1.2.0-beta.1/RAT-VISION-Setup-v1.2.0-beta.1.exe)**
 Creates Start Menu/uninstall entries and gives the updater a stable install path.
@@ -45,6 +56,9 @@ Unzip anywhere and run `RAT VISION.exe` — no installation required.
 
 
 ## ✨ Features
+
+> **VISUAL SYSTEMS // CAPABILITY INDEX**<br>
+> `FOREGROUND DETECTION` · `PROFILE AUTOMATION` · `MULTI-MONITOR CONTROL`
 
 - 🐀 Per-game/app profiles with instant ON/OFF toggles
 - 🌐 Global fallback profile for the desktop and unconfigured apps
@@ -60,6 +74,9 @@ Unzip anywhere and run `RAT VISION.exe` — no installation required.
 - 📊 Pseudonymous usage analytics — **enabled by default in configured builds, easy to turn off**
 
 ## 📸 Screenshots
+
+> **OBSERVATION ARCHIVE // INTERFACE CAPTURES**<br>
+> `LEVEL BLACK` · `CLEAN LAB` · `GUIDED PROTOCOL`
 
 ### 🌙 Level Black
 ![RAT VISION Level Black](docs/images/level-black.png)
@@ -123,6 +140,9 @@ Extract `RAT-VISION-Portable-vX.Y.Z.zip` and run `RAT VISION.exe`.
 
 ## 📊 Anonymous analytics
 
+> **TELEMETRY PROTOCOL // USER CONTROLLED**<br>
+> `PSEUDONYMOUS` · `MINIMAL EVENTS` · `SETTINGS OPT-OUT`
+
 When a build is configured with a TelemetryDeck public App ID and organization namespace, RAT VISION shares minimal pseudonymous usage statistics by default to help measure retention and version adoption. **You can turn it off at any time in Settings.** Unconfigured builds send no analytics. The random installation UUID is SHA-256 hashed locally before transmission. No executable names, game/profile names, file paths, usernames, serial numbers or foreground history are collected. See `docs/ANALYTICS.md`.
 
 GitHub itself provides Release Asset download counts plus recent repository traffic/referrers.
@@ -156,7 +176,9 @@ See [`LICENSES.md`](LICENSES.md) for third-party and reused-code license notices
 
 ## ☕ Support
 
-If RAT VISION saves you time tweaking gamma every time you launch a shooter, use the in-app **☕ Buy me a coffee** button.
+[![Support the lab — Buy me a coffee](docs/images/support-the-lab-banner.png)](https://dalink.to/bazaz)
+
+If RAT VISION saves you time tweaking gamma every time you launch a shooter, click the panel above or use the in-app **☕ Buy me a coffee** button. Your support keeps XRAT development, hardware testing and public releases moving.
 
 ## 🧰 Beta verification checklist
 
