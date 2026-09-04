@@ -1,0 +1,47 @@
+name: 🚀 Publish Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.13' }
+      - run: python -m pip install -e ".[dev]" pyinstaller
+      - name: Validate tag/version before build
+        shell: powershell
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart('v')
+          python -c "from ratvision import __version__; raise SystemExit(0 if __version__ == '$version' else 1)"
+      - run: python -m pytest -q
+      - name: Install Inno Setup 6
+        shell: powershell
+        run: choco install innosetup --yes --no-progress
+      - name: build-release
+        shell: powershell
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart('v')
+          ./release/build-release.ps1 -Version $version -GitHubRepository "${{ github.repository }}" -TelemetryDeckNamespace "${{ vars.TELEMETRYDECK_NAMESPACE }}" -TelemetryDeckAppId "${{ vars.TELEMETRYDECK_APP_ID }}"
+      - name: Generate release notes with build hashes
+        shell: powershell
+        run: |
+          Copy-Item release/RELEASE_NOTES.md release/out/RELEASE_NOTES.generated.md
+          Add-Content release/out/RELEASE_NOTES.generated.md "`n## 🔐 SHA-256`n"
+          Add-Content release/out/RELEASE_NOTES.generated.md '```text'
+          Get-Content release/out/SHA256SUMS.txt | Add-Content release/out/RELEASE_NOTES.generated.md
+          Add-Content release/out/RELEASE_NOTES.generated.md '```'
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          body_path: release/out/RELEASE_NOTES.generated.md
+          generate_release_notes: true
+          files: |
+            release/out/RAT-VISION-Setup-v*.exe
+            release/out/RAT-VISION-Portable-v*.zip
+            release/out/SHA256SUMS.txt
+            release/out/update-manifest.json

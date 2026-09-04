@@ -1,0 +1,6 @@
+{
+  "github_repository": "atikhobaev/rat-vision",
+  "telemetrydeck_endpoint": "https://nom.telemetrydeck.com/v2/namespace",
+  "telemetrydeck_namespace": "",
+  "telemetrydeck_app_id": ""
+}

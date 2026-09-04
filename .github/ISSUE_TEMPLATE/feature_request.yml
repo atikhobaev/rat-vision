@@ -1,0 +1,11 @@
+name: ✨ Feature request
+description: Suggest a display-profile improvement
+title: "[FEATURE] "
+body:
+  - type: textarea
+    id: problem
+    attributes: { label: Problem / use case }
+    validations: { required: true }
+  - type: textarea
+    id: idea
+    attributes: { label: Proposed behavior }

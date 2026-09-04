@@ -1,0 +1,15 @@
+name: 🐛 Bug report
+description: Report a reproducible RAT VISION problem
+title: "[BUG] "
+body:
+  - type: input
+    id: version
+    attributes: { label: RAT VISION version, placeholder: v1.2.0-beta.1 }
+    validations: { required: true }
+  - type: textarea
+    id: steps
+    attributes: { label: Steps to reproduce }
+    validations: { required: true }
+  - type: textarea
+    id: hardware
+    attributes: { label: Windows / GPU / monitor details }

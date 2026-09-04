@@ -1,0 +1,23 @@
+[project]
+name = "rat-vision"
+version = "1.2.0-beta.1"
+description = "Automatic game display profiles"
+requires-python = ">=3.13"
+dependencies = [
+  "Pillow>=12.0",
+  "psutil>=7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+include = ["ratvision*"]
+exclude = ["tests*", "release*", "installer*"]
+
+[tool.setuptools.package-data]
+ratvision = ["resources/**/*"]
