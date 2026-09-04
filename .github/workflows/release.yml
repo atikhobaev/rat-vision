@@ -30,7 +30,7 @@ jobs:
         shell: powershell
         run: |
           Copy-Item release/RELEASE_NOTES.md release/out/RELEASE_NOTES.generated.md
-          Add-Content release/out/RELEASE_NOTES.generated.md "`n## 🔐 SHA-256`n"
+          Add-Content release/out/RELEASE_NOTES.generated.md "`n## SHA-256`n"
           Add-Content release/out/RELEASE_NOTES.generated.md '```text'
           Get-Content release/out/SHA256SUMS.txt | Add-Content release/out/RELEASE_NOTES.generated.md
           Add-Content release/out/RELEASE_NOTES.generated.md '```'
