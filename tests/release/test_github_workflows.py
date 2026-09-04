@@ -21,3 +21,10 @@ def test_windows_builder_embeds_version_metadata_in_exe():
     text=Path('scripts/build-windows.ps1').read_text(encoding='utf-8')
     assert 'generate_version_info.py' in text
     assert '--version-file $VersionInfo' in text
+
+
+def test_workflows_leave_gui_tests_to_isolated_windows_builder():
+    for path in ('.github/workflows/ci.yml', '.github/workflows/release.yml'):
+        text = Path(path).read_text(encoding='utf-8')
+        assert 'python -m pytest -q --ignore=tests/ui --ignore=tests/test_app_smoke.py' in text
+        assert '\n      - run: python -m pytest -q\n' not in text

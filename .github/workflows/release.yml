@@ -17,7 +17,7 @@ jobs:
         run: |
           $version = "${{ github.ref_name }}".TrimStart('v')
           python -c "from ratvision import __version__; raise SystemExit(0 if __version__ == '$version' else 1)"
-      - run: python -m pytest -q
+      - run: python -m pytest -q --ignore=tests/ui --ignore=tests/test_app_smoke.py
       - name: Install Inno Setup 6
         shell: powershell
         run: choco install innosetup --yes --no-progress
