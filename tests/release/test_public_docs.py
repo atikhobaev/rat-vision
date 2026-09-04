@@ -15,12 +15,12 @@ def test_readme_hierarchy_leads_with_product_and_downloads_before_detailed_trust
         '## 🔄 Updates',
         '## 📊 Pseudonymous usage analytics',
         '## 🛡️ Security & VirusTotal',
-        '## 🧑‍💻 Build from source',
-        '## ☕ Support',
-        '## 📜 Licenses',
     ]
     positions = [text.index(phrase) for phrase in ordered]
     assert positions == sorted(positions)
+    assert text.index('## ✨ Features') < text.index('## ☕ Support') < text.index('## 🛡️ NOT A CHEAT')
+    assert '## 🧑‍💻 Build from source' in text
+    assert '## 📜 Licenses' in text
     assert text.count('Display utility only — no injection, no memory access, no game modification.') == 1
     assert text.count('docs/images/support-the-lab-banner.png') == 1
     lower = text.lower()

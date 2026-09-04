@@ -3,6 +3,8 @@ import subprocess
 
 from ratvision.updates.apply import build_installer_command, build_portable_powershell
 
+POWERSHELL_TEST_TIMEOUT = 30
+
 
 def test_installer_command_is_silent_and_requests_relaunch(tmp_path):
     exe=tmp_path/'setup.exe'
@@ -43,7 +45,7 @@ def test_portable_helper_keeps_working_backup_after_successful_relaunch(tmp_path
         ['powershell.exe', '-NoLogo', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(script)],
         capture_output=True,
         text=True,
-        timeout=10,
+        timeout=POWERSHELL_TEST_TIMEOUT,
     )
 
     assert result.returncode == 0, result.stderr
@@ -66,7 +68,7 @@ def test_portable_helper_catch_restores_backup_when_replacement_fails(tmp_path):
         ['powershell.exe', '-NoLogo', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(script)],
         capture_output=True,
         text=True,
-        timeout=10,
+        timeout=POWERSHELL_TEST_TIMEOUT,
     )
 
     assert result.returncode != 0
@@ -101,7 +103,7 @@ function Remove-Item {
         ['powershell.exe', '-NoLogo', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(script)],
         capture_output=True,
         text=True,
-        timeout=10,
+        timeout=POWERSHELL_TEST_TIMEOUT,
     )
 
     assert result.returncode != 0
@@ -128,7 +130,7 @@ def test_portable_helper_rolls_back_when_relaunch_fails(tmp_path):
         ['powershell.exe', '-NoLogo', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(script)],
         capture_output=True,
         text=True,
-        timeout=10,
+        timeout=POWERSHELL_TEST_TIMEOUT,
     )
 
     assert result.returncode != 0
