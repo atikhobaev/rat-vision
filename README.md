@@ -120,7 +120,7 @@ See [`docs/UPDATE_PROTOCOL.md`](docs/UPDATE_PROTOCOL.md).
 > **TELEMETRY PROTOCOL // USER CONTROLLED**<br>
 > `PSEUDONYMOUS` · `MINIMAL EVENTS` · `SETTINGS OPT-OUT`
 
-📊 Pseudonymous usage analytics are **enabled by default in configured builds** and can be disabled at any time in Settings. RAT VISION uses TelemetryDeck to measure retention and version adoption. Unconfigured builds send no analytics.
+📊 Pseudonymous usage analytics are **enabled by default in configured builds**, and you can **turn it off at any time in Settings**. RAT VISION uses TelemetryDeck to measure retention and version adoption. Unconfigured builds send no analytics.
 
 The random installation UUID is SHA-256 hashed locally before transmission. No executable names, game/profile names, file paths, usernames, serial numbers or foreground history are collected. See [`docs/ANALYTICS.md`](docs/ANALYTICS.md).
 

@@ -1,11 +1,28 @@
 from pathlib import Path
 
 
-def test_readme_positions_rat_vision_as_display_output_not_cheat():
+def test_readme_hierarchy_leads_with_product_and_downloads_before_detailed_trust_block():
     text = Path('README.md').read_text(encoding='utf-8')
-    required = ['🐀 RAT VISION','🛡️ NOT A CHEAT','🎯 What it is for','✨ Features','📸 Screenshots','🚀 Download','📦 Installer vs Portable','🌐 Global Profile','🖥️ Multi-monitor','🔄 Updates','🛡️ Security & VirusTotal','📊 Anonymous analytics','☕ Support']
-    for phrase in required:
-        assert phrase in text
+    ordered = [
+        '# 🐀 RAT VISION',
+        '## 🚀 Download',
+        '## 🖥️ RAT VISION in action',
+        '## ✨ Features',
+        '## 🎯 Typical usage',
+        '## 🧪 How it works',
+        '## 🛡️ NOT A CHEAT',
+        '## 🖥️ Multi-monitor',
+        '## 🔄 Updates',
+        '## 📊 Pseudonymous usage analytics',
+        '## 🛡️ Security & VirusTotal',
+        '## 🧑‍💻 Build from source',
+        '## ☕ Support',
+        '## 📜 Licenses',
+    ]
+    positions = [text.index(phrase) for phrase in ordered]
+    assert positions == sorted(positions)
+    assert text.count('Display utility only — no injection, no memory access, no game modification.') == 1
+    assert text.count('docs/images/support-the-lab-banner.png') == 1
     lower = text.lower()
     assert 'changes what your monitor displays' in lower
     assert 'does not inject' in lower
