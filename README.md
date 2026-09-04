@@ -61,6 +61,12 @@ Dark shooters often need a different gamma or color setup than the desktop. RAT 
 
 It also works as general per-application color correction for games, creative tools, video players and other Windows apps.
 
+## ☕ Support
+
+[![Support the lab — Buy me a coffee](docs/images/support-the-lab-banner.png)](https://dalink.to/bazaz)
+
+If RAT VISION saves you time tweaking gamma every time you launch a shooter, click the panel above or use the in-app **☕ Buy me a coffee** button. Your support keeps XRAT development, hardware testing and public releases moving.
+
 ## 🧪 How it works
 
 1. 👁️ Observe foreground-window changes through Win32.
@@ -208,12 +214,6 @@ The private runtime is installed with **Tcl/Tk enabled** so the Tkinter UI build
 - 🖥️ Improve display/GPU compatibility diagnostics
 - 🔄 Harden self-update based on real published releases
 - 📊 Improve pseudonymous retention metrics while keeping telemetry transparent and easy to disable
-
-## ☕ Support
-
-[![Support the lab — Buy me a coffee](docs/images/support-the-lab-banner.png)](https://dalink.to/bazaz)
-
-If RAT VISION saves you time tweaking gamma every time you launch a shooter, click the panel above or use the in-app **☕ Buy me a coffee** button. Your support keeps XRAT development, hardware testing and public releases moving.
 
 ## 📜 Licenses
 
